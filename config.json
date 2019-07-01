@@ -1,0 +1,19 @@
+{
+  "profile": "default",
+  "profiles": {
+    "default": {
+      "host": "https://www.google.co.uk",
+      "browser": {
+        "name": "chrome",
+        "version": "75"
+      },
+      "os": {
+        "name": "Windows",
+        "version": "10"
+      },
+      "timeouts": {
+        "step": 10
+      }
+    }
+  }
+}
