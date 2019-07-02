@@ -2,7 +2,7 @@
   "opts": {
     "template": "node_modules/better-docs",
     "encoding": "utf8",
-    "destination": "./out/",
+    "destination": "./docs/",
     "recurse": true,
     "tutorials": "./tutorials"
   },
@@ -11,5 +11,9 @@
   },
   "plugins": [
     "node_modules/better-docs/category"
-  ]
+  ],
+  "source": {
+    "include": ["./", "./README.md"],
+    "exclude": ["./node_modules", "./docs", "./tutorials", "./sia.js"]
+  }
 }

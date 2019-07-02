@@ -4,7 +4,16 @@ const {driver} = require("../browser_setup.js"),
     {Wait} = require("./wait.js"),
     {until} = require("selenium-webdriver");
 
+
 class Element extends Chain {
+    /**
+     * @category UI Interactions
+     * @constructs
+     * @extends Chain
+     * @param {Object} locator
+     * @classdesc For interacting with the elements on the webpage
+     * @example new Element({css: 'input[name="q"]'})
+     */
     constructor(locator) {
         super();
         this.locator = locator;
@@ -15,6 +24,8 @@ class Element extends Chain {
      * @memberOf Element
      * @description Asserts the elements visibility
      * @returns {Promise<*>}
+     * @example await element.should.eventually.be.displayed
+     *
      */
     get displayed() {
         if (this.switches.not) {
@@ -32,6 +43,14 @@ class Element extends Chain {
         }
     }
 
+    /**
+     * @name find
+     * @memberOf Element
+     * @description Asserts that the element exists in the DOM
+     * @returns {Promise<*>}
+     * @example await element.find();
+     *
+     */
     async find() {
         if (this.switches.development) {
             return new Promise(async (resolve) => {
@@ -65,6 +84,14 @@ class Element extends Chain {
         }
     }
 
+    /**
+     * @name found
+     * @memberOf Element
+     * @description Asserts that the element exists in the DOM
+     * @returns {Promise<*>}
+     * @example await element.can.be.found
+     *
+     */
     get found() {
         return new Promise(async (resolve) => {
             let result = await this.find();
@@ -76,6 +103,14 @@ class Element extends Chain {
         });
     }
 
+    /**
+     * @name location
+     * @memberOf Element
+     * @description Gets the co-ordinates of the element
+     * @returns {Promise<*>}
+     * @example let location = await element.get.location;
+     *
+     */
     get location() {
         return new Promise(async () => {
             this.switches.development = true;
@@ -92,6 +127,14 @@ class Element extends Chain {
         })()
     }
 
+    /**
+     * @name click
+     * @memberOf Element
+     * @description Clicks on the element provided
+     * @returns {Promise<*>}
+     * @example await element.click;
+     *
+     */
     get click() {
         return this.find().catch((e) => {
             throw new FindError(e)
@@ -105,9 +148,17 @@ class Element extends Chain {
                 return this.resetSwitches;
             });
         })
-        // await driver.actions({bridge: false}).move(this.location).click().perform(); // Will fix issue where elements are unclickable due to being covered by a transparent element, but won't work yet: https://github.com/SeleniumHQ/selenium/issues/7191
+        // await driver.actions({bridge: false}).move(this.location).click().perform(); // TODO: Will fix issue where elements are unclickable due to being covered by a transparent element, but won't work yet due to a bug: https://github.com/SeleniumHQ/selenium/issues/7191
     }
 
+    /**
+     * @name clicked
+     * @memberOf Element
+     * @description Clicks on the element provided
+     * @returns {Promise<*>}
+     * @example await element.can.be.clicked;
+     *
+     */
     get clicked() {
         return new Promise(async (resolve) => {
             let result = await this.click;
@@ -119,19 +170,36 @@ class Element extends Chain {
         });
     }
 
-    async attribute(attr) {
+    /**
+     * @name attribute
+     * @memberOf Element
+     * @description Gets the attribute given of the element
+     * @param {string} attribute
+     * @returns {Promise<*>}
+     * @example let attribute = await element.get.attribute("id");
+     *
+     */
+    async attribute(attribute) {
         return await this.find().then(async () => {
             this.switches.development = true;
             return await (await this.find().catch((e) => {
                 throw new FindError(e)
             }).then((result) => {
                 return result;
-            })).getAttribute(attr).then((result) => {
+            })).getAttribute(attribute).then((result) => {
                 return result;
             });
         });
     }
 
+    /**
+     * @name text
+     * @memberOf Element
+     * @description Gets the text of the element
+     * @returns {Promise<*>}
+     * @example let text = await element.get.text;
+     *
+     */
     get text() {
         this.switches.development = true;
         return (async () => {

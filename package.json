@@ -2,11 +2,13 @@
   "name": "s.i.a",
   "version": "0.0.1",
   "dependencies": {
+    "documentation-devseed-theme": "^0.1.6",
+    "documentation": "^11.0.1",
+    "jsdoc": "^3.6.2",
     "better-docs": "^1.1.6",
     "chai": "^4.2.0",
     "chromedriver": "^74.0.0",
     "frisby": "^2.1.2",
-    "jsdoc": "^3.6.2",
     "mocha": "^6.1.4",
     "moment": "^2.24.0",
     "selenium-webdriver": "^4.0.0-alpha.1"

@@ -16,6 +16,7 @@ function startDriver() {
 
 
 /**
+ * @category Internal
  * @name driver
  * @description Uses the config to create a browser for the specifications asked for.
  * (this will only work when paired with something like BrowserStack - which involves running the scripts using virtual machines

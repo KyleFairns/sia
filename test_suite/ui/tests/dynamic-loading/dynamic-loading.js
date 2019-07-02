@@ -16,7 +16,7 @@ describe("Dynamic Loading", async () => {
     });
     it("should be able to display text after loading", async () => {
         await dynamic.loading.bar.should.eventually.not.be.displayed.then(async () => {
-            let text = await (await dynamic.loading.loaded.can.be.found).and.is.displayed.then(async (loaded) => {
+            let text = await (await dynamic.loading.loaded.can.be.found).and.should.be.displayed.then(async (loaded) => {
                 return await loaded.get.text;
             });
             expect(text).to.include("Hello World!");

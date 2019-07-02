@@ -4,6 +4,15 @@ const {Chain} = require("./chain.js"),
     {driver} = require("../browser_setup.js");
 
 class Url extends Chain {
+
+    /**
+     * @category UI Interactions
+     * @constructs
+     * @extends Chain
+     * @param {string} url
+     * @classdesc For navigation using urls
+     * @example new Element({css: 'input[name="q"]'});
+     */
     constructor(url) {
         super();
         let split = /(?<scheme>^https?:\/\/)(?<host>.+?)(?<path>\/.*?)?(?<querystring>[?].*)?$/.exec(url.match(/^https?:\/\//) ? url : `${config.host}${url}`); // https://regex101.com/r/o2XQ3e/2
@@ -11,7 +20,7 @@ class Url extends Chain {
         if (!split.groups.scheme) {
             throw new UrlConstructError("Scheme (http, https) must be provided");
         } else if (!split.groups.host) {
-            throw new UrlConstructError("Host (www.domain.com, 192.168.0.1, etc)");
+            throw new UrlConstructError("Host (www.domain.com, 192.168.0.1, etc) must be provided");
         } else {
             this.scheme = split.groups.scheme;
             this.host = split.groups.host;
@@ -21,6 +30,14 @@ class Url extends Chain {
         }
     }
 
+    /**
+     * @name navigate
+     * @memberOf Url
+     * @description Navigates to the url
+     * @returns {Promise<*>}
+     * @example await url.navigate
+     *
+     */
     get navigate() {
         return driver.get(this.url);
     }

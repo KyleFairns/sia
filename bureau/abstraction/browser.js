@@ -3,20 +3,21 @@ const {Chain} = require("./chain.js"),
 
 let {driver} = require("../browser_setup.js");
 
-/**
- * @class Browser
- * @category Browser
- * @extends Chain
- * @description For interacting with the browser window
- * @example new Browser();
- */
+
 class Browser extends Chain {
+
+    /**
+     * @category UI Interactions
+     * @constructs
+     * @extends Chain
+     * @classdesc For interacting with the browser window
+     */
     constructor() {
         super();
     }
 
     /**
-     *  @methodOf Browser
+     *  @memberOf Browser
      *  @method quit
      *  @description Quits the current browser TODO: Implement a restart
      *  @example browser.quit;
@@ -26,7 +27,7 @@ class Browser extends Chain {
     }
 
     /**
-     *  @methodOf Browser
+     *  @memberOf Browser
      *  @method maximise
      *  @description Makes the browser full-screen
      *  @example browser.maximise;

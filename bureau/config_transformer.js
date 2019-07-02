@@ -36,6 +36,7 @@ let newConfig = {
 };
 
 /**
+ * @category Internal
  * @name config
  * @description Processes the config.json in the parent of the features folder
  * Checks stated profile exists, or uses the framework default. Will check every value to see if it exists in the profile

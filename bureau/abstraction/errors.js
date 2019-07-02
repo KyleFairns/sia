@@ -1,4 +1,12 @@
 class TestError extends Error {
+    /**
+     * @category Errors
+     * @constructs
+     * @extends Error
+     * @param {string} message
+     * @classdesc For reporting errors during testing
+     * @example throw new TestError(`Error on registrations page: ${e}`)
+     */
     constructor(message){
         super();
         this.name = this.constructor.name;
@@ -9,8 +17,17 @@ class TestError extends Error {
 }
 
 class FindError extends TestError {
+
+    /**
+     * @category Errors
+     * @constructs
+     * @extends TestError
+     * @param {string} message
+     * @classdesc For reporting errors during finding elements
+     * @example throw new FindError(`Element could not be found: ${e}`)
+     */
     constructor(message){
-        super();
+        super(message);
         this.message = message;
         this.name = this.constructor.name;
         Error.captureStackTrace(this, this.constructor);
@@ -18,8 +35,16 @@ class FindError extends TestError {
 }
 
 class UrlConstructError extends TestError {
+    /**
+     * @category Errors
+     * @constructs
+     * @extends TestError
+     * @param {string} message
+     * @classdesc For reporting errors during constructing urls
+     * @example throw new UrlConstructError("Scheme (http, https) must be provided")
+     */
     constructor(message){
-        super();
+        super(message);
         this.message = message;
         this.name = this.constructor.name;
         Error.captureStackTrace(this, this.constructor);

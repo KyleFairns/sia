@@ -1,4 +1,10 @@
 class Chain {
+
+    /**
+     * @category Internal
+     * @constructs
+     * @classdesc Adds various words to aid readability, turning on switches that methods will handle
+     */
     constructor() {
         this.switches = {};
     }
@@ -8,45 +14,102 @@ class Chain {
         return this;
     }
 
-    get must(){
+
+    /**
+     *  @memberOf Chain
+     *  @method eventually
+     *  @description A word to add readability
+     *  @example chain.eventually;
+     *  @returns Chain
+     */
+    get eventually() {
         return this;
     }
 
-    get eventually(){
+    /**
+     *  @memberOf Chain
+     *  @method can
+     *  @description A word to add readability
+     *  @example chain.can;
+     *  @returns Chain
+     */
+    get can() {
         return this;
     }
 
-    get can(){
+    /**
+     *  @memberOf Chain
+     *  @method should
+     *  @description A word to add readability
+     *  @example chain.should;
+     *  @returns Chain
+     */
+    get should() {
         return this;
     }
 
-    get should(){
+    /**
+     *  @memberOf Chain
+     *  @method be
+     *  @description A word to add readability
+     *  @example chain.be;
+     *  @returns Chain
+     */
+    get be() {
         return this;
     }
 
-    get be(){
+    /**
+     *  @memberOf Chain
+     *  @method is
+     *  @description A word to add readability
+     *  @example chain.is;
+     *  @returns Chain
+     */
+    get is() {
         return this;
     }
 
-    get is(){
+    /**
+     *  @memberOf Chain
+     *  @method a
+     *  @description A word to add readability
+     *  @example chain.a;
+     *  @returns Chain
+     */
+    get a() {
         return this;
     }
 
-    get a(){
+    /**
+     *  @memberOf Chain
+     *  @method and
+     *  @description A word to add readability
+     *  @example chain.and;
+     *  @returns Chain
+     */
+    get and() {
         return this;
     }
 
-    get and(){
+    /**
+     *  @memberOf Chain
+     *  @method get
+     *  @description A word to add readability
+     *  @example chain.get;
+     *  @returns Chain
+     */
+    get get() {
         return this;
     }
 
-    get but(){
-        return this;
-    }
-    get get(){
-        return this;
-    }
-
+    /**
+     *  @memberOf Chain
+     *  @method not
+     *  @description This turns on the "not" switch for the Chain
+     *  @example chain.not;
+     *  @returns Chain
+     */
     get not() {
         this.switches.not = true;
         return this;
