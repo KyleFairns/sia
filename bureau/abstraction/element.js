@@ -10,12 +10,20 @@ class Element extends Chain {
      * @category UI Interactions
      * @constructs
      * @extends Chain
-     * @param {Object} locator
+     * @param {Object} locator The locator for the element. Can be anything accepted by selenium, in the format {<i>type<i>: <i>locator<i>}
      * @classdesc For interacting with the elements on the webpage
      * @example new Element({css: 'input[name="q"]'})
      */
     constructor(locator) {
         super();
+
+        /**
+         * @name locator
+         * @memberOf Url
+         * @description The locator for the element. Can be anything accepted by selenium, in the format {<i>type<i>: <i>locator<i>}
+         * @returns Object
+         * @example await element.get.locator
+         */
         this.locator = locator;
     }
 

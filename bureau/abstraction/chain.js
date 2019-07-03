@@ -6,9 +6,23 @@ class Chain {
      * @classdesc Adds various words to aid readability, turning on switches that methods will handle
      */
     constructor() {
+        /**
+         *  @memberOf Chain
+         *  @method switches
+         *  @description A collection of the switches that have been turned on for an element
+         *  @example chain.eventually;
+         *  @returns Object
+         */
         this.switches = {};
     }
 
+    /**
+     *  @memberOf Chain
+     *  @method resetSwitches
+     *  @description Resets all of the switches turned on so that the language chain can continue without error.
+     *  @example chain.resetSwitches;
+     *  @returns Chain
+     */
     get resetSwitches() {
         this.switches = {};
         return this;

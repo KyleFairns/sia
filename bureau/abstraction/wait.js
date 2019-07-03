@@ -8,7 +8,7 @@ class Wait extends Chain {
      * @category UI Interactions
      * @constructs
      * @extends Chain
-     * @param {Number} time
+     * @param {Number} time The amount of time that you want to wait
      * @classdesc For any waiting needed
      * @example new Wait(0.5).seconds
      */

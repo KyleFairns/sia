@@ -1,6 +1,6 @@
 const {Browser} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`),
     browser = new Browser(),
-    {pom} = require(`${process.cwd()}/test_suite/ui/elements/pom.js`),
+    {pom} = require(`${process.cwd()}/test_suite/pom/pom.js`),
     {expect} = require('chai'),
     the = pom.pages.the,
     challenging = pom.pages.the.internet.challenging;
