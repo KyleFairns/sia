@@ -15,5 +15,17 @@
   "source": {
     "include": ["./", "./README.md"],
     "exclude": ["./node_modules", "./docs", "./tutorials", "./sia.js"]
+  },
+  "templates": {
+    "better-docs": {
+      "name": "SIA with Bureau",
+      "logo": "../misc/bot-icon.png",
+      "navigation": [
+        {
+          "label": "Github",
+          "href": "https://github.com/KyleFairns/sia"
+        }
+      ]
+    }
   }
 }

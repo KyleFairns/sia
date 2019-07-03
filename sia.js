@@ -4,8 +4,7 @@ const consoleArgs = process.argv,
     {exec} = require('child_process');
 
 
-let args = {},
-    run = '';
+let args = {};
 
 exec(`mkdir docs`);
 

@@ -23,8 +23,8 @@ These are now usable in a test:
 
 ``` 
 describe("A Menu Item", ()=>{
-		it("should be clickable", async ()=>{
-				return await (await menu.item.can.be.found).and.can.be.clicked
+	it("should be clickable", async ()=>{
+		return await (await menu.item.can.be.found).and.can.be.clicked
 	})
 }) 
 ```
