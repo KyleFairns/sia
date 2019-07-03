@@ -7,6 +7,8 @@ const consoleArgs = process.argv,
 let args = {},
     run = '';
 
+exec(`mkdir docs`);
+
 // Break apart arguments so that any with values get assigned their values. Those without values are set to true
 // The first two arguments are the word "node" and the path to this file, hence starting the loop from the 3rd argument
 for (let i = 2; consoleArgs.length > i; i++) {
