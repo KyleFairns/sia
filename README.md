@@ -10,8 +10,7 @@
  
  It uses promises and asynchronous functionality, as well as capturing some of the more 
  common errors, and includes a bare-bones functional library to click, find and check 
- visibility of elements, wait functionality, simple browser interactions and basic url   
- navigation.
+ visibility of elements, wait functionality, simple browser interactions and basic url navigation.
  
  
 ### SIA Runner

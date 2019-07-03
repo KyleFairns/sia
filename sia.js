@@ -22,7 +22,8 @@ if (args['-h'] || args['--help']) {
     let arguments = [
             ["--help, -h", "Displays this help message"],
             ["--documentation, -d", "Fires JSDoc and opens the documentation"],
-            ["--run, -r", "Runs the Mocha tests"]
+            ["--run, -r", "Runs the Mocha tests"],
+            ["--install, -i", "Runs npm install script"]
         ],
         longest = arguments[1][0];
 
