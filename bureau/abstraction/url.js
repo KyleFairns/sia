@@ -27,7 +27,7 @@ class Url extends Chain {
              * @memberOf Url
              * @description Gets the scheme (protocol) of the url
              * @returns string
-             * @example await url.get.scheme
+             * @example url.get.scheme
              *
              */
             this.scheme = split.groups.scheme;
@@ -37,7 +37,7 @@ class Url extends Chain {
              * @memberOf Url
              * @description Gets the host (domain) of the url
              * @returns string
-             * @example await url.get.host
+             * @example  url.get.host
              *
              */
             this.host = split.groups.host;
@@ -47,7 +47,7 @@ class Url extends Chain {
              * @memberOf Url
              * @description Gets the path of the url
              * @returns string
-             * @example await url.get.path
+             * @example  url.get.path
              */
             this.path = split.groups.path || "/"; // Default to root if undefined - avoids "undefined" erroneously being placed in urls
 
@@ -56,7 +56,7 @@ class Url extends Chain {
              * @memberOf Url
              * @description Gets the querystring of the url
              * @returns string
-             * @example await url.get.querystring
+             * @example  url.get.querystring
              */
             this.querystring = split.groups.querystring || ""; // Default to empty string - see above
 
@@ -65,7 +65,7 @@ class Url extends Chain {
              * @memberOf Url
              * @description Gets the full url
              * @returns string
-             * @example await url.get.querystring
+             * @example  url.get.url
              */
             this.url = `${this.scheme}${this.host}${this.path}${this.querystring}`;
         }
