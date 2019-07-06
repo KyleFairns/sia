@@ -1,7 +1,8 @@
 const {Chain} = require("./chain.js"),
     {config} = require("../config_transformer.js"),
     {UrlConstructError} = require("./errors.js"),
-    {driver} = require("../browser_setup.js");
+    {driver} = require("../browser_setup.js"),
+    frisby = require("frisby");
 
 class Url extends Chain {
 
@@ -69,6 +70,64 @@ class Url extends Chain {
              */
             this.url = `${this.scheme}${this.host}${this.path}${this.querystring}`;
         }
+    }
+
+    /**
+     * @name get
+     * @memberOf Url
+     * @description Does a get request on the url. See https://www.frisbyjs.com/http.html for more info
+     * @returns {*} - A frisby.js get request
+     * @example url.get.expect("status", 200);
+     */
+    get get(){
+        return frisby.get(this.url);
+    }
+
+    /**
+     * @name post
+     * @memberOf Url
+     * @description Does a post request on the url, with the data provided. See https://www.frisbyjs.com/http.html for more info
+     * @param data
+     * @returns {*} - A frisby.js post request
+     * @example url.post({
+            "name": John.Smith.name, "salary": John.Smith.salary, "age": John.Smith.age
+        }).expect('status', 200);
+     */
+    post(data){
+        return frisby.post(this.url, data);
+    }
+
+    /**
+     * @name delete
+     * @memberOf Url
+     * @description Does a delete request on the url. See https://www.frisbyjs.com/http.html for more info
+     * @returns {*} - A frisby.js delete request
+     * @example url.get.expect("status", 200);
+     */
+    get delete(){
+        return frisby.del(this.url);
+    }
+
+    /**
+     * @name put
+     * @memberOf Url
+     * @description Does a put request on the url. See https://www.frisbyjs.com/http.html for more info
+     * @param data
+     * @returns {*}
+     */
+    put(data){
+        return frisby.put(this.url, data);
+    }
+
+    /**
+     * @name fetch
+     * @memberOf Url
+     * @description Does a fetch request on the url. See https://www.frisbyjs.com/http.html for more info
+     * @param options
+     * @returns {*}
+     */
+    fetch(options){
+        return frisby.fetch(this.url, options);
     }
 
     /**
