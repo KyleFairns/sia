@@ -3,7 +3,7 @@ const {Chain} = require("./chain.js");
 class User extends Chain {
 
     /**
-     * @category API
+     * @category Test Data
      * @constructs
      * @extends Chain
      * @param {Object} details All details needed for the user. Will be able to be accessed as the object describes

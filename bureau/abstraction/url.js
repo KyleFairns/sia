@@ -7,7 +7,7 @@ const {Chain} = require("./chain.js"),
 class Url extends Chain {
 
     /**
-     * @category UI Interactions
+     * @category Url Interactions
      * @constructs
      * @extends Chain
      * @param {string} url Can be a full url, or partial url completed by the host in the config file
@@ -102,7 +102,7 @@ class Url extends Chain {
      * @memberOf Url
      * @description Does a delete request on the url. See https://www.frisbyjs.com/http.html for more info
      * @returns {*} - A frisby.js delete request
-     * @example url.get.expect("status", 200);
+     * @example url.delete.expect("status", 200);
      */
     get delete(){
         return frisby.del(this.url);
