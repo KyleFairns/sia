@@ -6,38 +6,18 @@ class User extends Chain {
      * @category API
      * @constructs
      * @extends Chain
-     * @param {Object} details All details needed for the user
+     * @param {Object} details All details needed for the user. Will be able to be accessed as the object describes
      * @classdesc For user detail storage
-     * @example new User({name: "Joan Griffiths", age: "34", salary: "58000"})
+     * @example new User({name: "Joan Griffiths", age: "34", salary: "58000"}).name
      */
     constructor(details){
         super();
 
-        /**
-         * @name name
-         * @memberOf User
-         * @description Gets the name of the user
-         * @returns string
-         * @example user.get.name
-         */
-        this.name = details.name;
-        /**
-         * @name salary
-         * @memberOf User
-         * @description Gets the salary of the user
-         * @returns string
-         * @example user.get.salary
-         */
-        this.salary = details.salary;
+        let keys = Object.keys(details);
 
-        /**
-         * @name age
-         * @memberOf User
-         * @description Gets the age of the user
-         * @returns string
-         * @example user.get.age
-         */
-        this.age = details.age;
+        keys.forEach((key)=>{
+            this[key] = details[key];
+        });
     }
 }
 
