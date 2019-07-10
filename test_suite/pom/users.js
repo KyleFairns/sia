@@ -1,7 +1,7 @@
 const {User} = require("bureau-ium");
 
 let users = {
-    Joan:{
+    Joan: {
         Griffiths: new User({name: "Joan Griffiths", age: "34", salary: "58000"})
     }
 };

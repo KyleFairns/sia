@@ -12,7 +12,7 @@ let theInternet = {
     challenging: {
         dom: require("./challenging-dom.js").challenging.dom
     },
-    dynamic:{
+    dynamic: {
         loading: require("./dynamic-loading.js").dynamic.loading
     }
 };

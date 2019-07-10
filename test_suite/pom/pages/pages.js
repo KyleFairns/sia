@@ -1,5 +1,5 @@
 let pages = {
-    the:{
+    the: {
         internet: require("./the-internet/the-internet.js").theInternet
     },
     google: require("./google/google.js").google
