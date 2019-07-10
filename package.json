@@ -3,7 +3,7 @@
   "version": "1.0.0a",
   "description": "An easy to use and even easier to debug testing framework",
   "dependencies": {
-    "bureau-ium": "^1.0.0-alpha.0",
+    "bureau-ium": "latest",
     "chai": "^4.2.0",
     "mocha": "^6.1.4"
   }
