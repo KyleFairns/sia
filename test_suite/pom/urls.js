@@ -1,4 +1,4 @@
-const {Url} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`);
+const {Url} = require("bureau-ium");
 
 let urls = {
     the: {
@@ -8,6 +8,9 @@ let urls = {
         create:{
             user: new Url("http://dummy.restapiexample.com/api/v1/create")
         }
+    },
+    google:{
+        home: new Url("https://www.google.co.uk")
     }
 };
 

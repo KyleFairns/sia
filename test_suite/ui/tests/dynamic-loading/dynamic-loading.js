@@ -1,4 +1,4 @@
-const {Browser} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`),
+const {Browser} = require("bureau-ium"),
     browser = new Browser(),
     {pom} = require(`${process.cwd()}/test_suite/pom/pom.js`),
     {expect} = require('chai'),
@@ -7,6 +7,7 @@ const {Browser} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`)
 
 
 describe("Dynamic Loading", async () => {
+
     before(async () => {
         await browser.maximise;
         await the.internet.urls.home.navigate;
@@ -14,6 +15,7 @@ describe("Dynamic Loading", async () => {
         await the.internet.menu.item("Example 2: Element rendered after the fact").can.be.clicked;
         return await dynamic.loading.start.can.be.clicked;
     });
+
     it("should be able to display text after loading", async () => {
         await dynamic.loading.bar.should.eventually.not.be.displayed.then(async () => {
             let text = await (await dynamic.loading.loaded.can.be.found).and.should.be.displayed.then(async (loaded) => {
@@ -21,6 +23,6 @@ describe("Dynamic Loading", async () => {
             });
             expect(text).to.include("Hello World!");
         });
-
     });
+
 });

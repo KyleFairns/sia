@@ -1,4 +1,4 @@
-const {User} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`);
+const {User} = require("bureau-ium");
 
 let users = {
     Joan:{

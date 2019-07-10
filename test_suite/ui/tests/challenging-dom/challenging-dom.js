@@ -1,4 +1,4 @@
-const {Browser} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`),
+const {Browser} = require("bureau-ium"),
     browser = new Browser(),
     {pom} = require(`${process.cwd()}/test_suite/pom/pom.js`),
     {expect} = require('chai'),

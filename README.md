@@ -3,14 +3,15 @@
 ### BUREAU
 **BU**siness **RE**adable **AU**tomation
  
- A freshly written abstraction library for Selenium - which allows for language chaining,
- simplifying the automation. It allows us to chain actions on the same element (including
+ An abstraction library for Selenium and Frisby.js, in the style of Chai.js, simplifies the 
+ automation code. It allows us to chain actions on the same element (including
  waits as standard), making the process of writing test code faster.
  Written with self documentation and ease of use in mind.
  
- It uses promises and asynchronous functionality, as well as capturing some of the more 
- common errors, and includes a bare-bones functional library to click, find and check 
- visibility of elements, wait functionality, simple browser interactions and basic url navigation.
+ It uses promises and asynchronous functionality, captures some of the more 
+ common errors, includes a functional library to interact with elements, 
+ navigate with and send api requests to urls, and transforms the config  
+ 
  
  
 ### SIA Runner

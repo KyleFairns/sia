@@ -3,10 +3,7 @@
 const consoleArgs = process.argv,
     {exec} = require('child_process');
 
-
 let args = {};
-
-exec(`mkdir docs`);
 
 // Break apart arguments so that any with values get assigned their values. Those without values are set to true
 // The first two arguments are the word "node" and the path to this file, hence starting the loop from the 3rd argument
@@ -22,8 +19,7 @@ if (args['-h'] || args['--help']) {
 
     let arguments = [
             ["--help, -h", "Displays this help message"],
-            ["--documentation, -d", "Fires JSDoc and opens the documentation"],
-            ["--run, -r", "Runs the Mocha tests"],
+            ["--mocha, -m", "Runs the Mocha tests"],
             ["--install, -i", "Runs npm install script"]
         ],
         longest = arguments[1][0];
@@ -47,15 +43,7 @@ if ((args['-i'] || args['--install']) && !args['-h'] && !args['--help']) {
     });
 }
 
-if ((args['-d'] || args['--documentation']) && !args['-h'] && !args['--help']) {
-    exec(`.\\node_modules\\.bin\\jsdoc -c "./jsdoc.json"`, (error, stdout, stderr) => {
-        console.log(`${stdout}`);
-        console.error(`${stderr}`);
-    });
-
-}
-
-if ((args['-r'] || args['--run']) && !args['-h'] && !args['--help']) {
+if ((args['-m'] || args['--mocha']) && !args['-h'] && !args['--help']) {
     exec('.\\node_modules\\.bin\\mocha -t 20000 --recursive .\\test_suite\\', (error, stdout, stderr) => {
         console.log(`${stdout}`);
         console.error(`${stderr}`);

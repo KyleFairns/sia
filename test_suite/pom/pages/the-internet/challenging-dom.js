@@ -1,4 +1,4 @@
-const {Element} = require(`${process.cwd()}/bureau/abstraction/abstractions.js`);
+const {Element} = require("bureau-ium");
 const {expect} = require("chai");
 
 let challenging = {

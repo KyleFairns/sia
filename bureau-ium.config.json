@@ -5,7 +5,10 @@
       "host": "https://www.google.co.uk",
       "browser": {
         "name": "chrome",
-        "version": "75"
+        "version": "75",
+        "options": {
+
+        }
       },
       "os": {
         "name": "Windows",

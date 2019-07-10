@@ -1,4 +1,4 @@
-const {Element} = require(`${process.cwd()}/bureau/abstraction/abstractions`);
+const {Element} = require("bureau-ium");
 
 
 let dynamic = {
