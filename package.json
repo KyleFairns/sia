@@ -1,10 +1,11 @@
 {
   "name": "sia",
-  "version": "1.0.0a",
-  "description": "An easy to use and even easier to debug testing framework",
+  "version": "1.0.0-alpha.2",
+  "description": "An easy to use (and even easier to debug) test framework",
   "dependencies": {
-    "bureau-ium": "latest",
+    "bureau-ium": "file:../bureau-ium",
     "chai": "^4.2.0",
+    "inquirer": "^6.5.0",
     "mocha": "^6.1.4"
   }
 }

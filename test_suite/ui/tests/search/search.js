@@ -7,7 +7,7 @@ describe("Google", async () => {
 
     before(async () => {
         await browser.maximise;
-        return await google.urls.home.navigate;
+        return await browser.browse(google.urls.home)
     });
 
     it("should be able to display results after searching", async () => {

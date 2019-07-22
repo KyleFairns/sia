@@ -1,7 +1,8 @@
 // New runner for the framework, so we can add things like cross browser execution once Browserstack is integrated,
 // documentation tools and even add in a reporter
 const consoleArgs = process.argv,
-    {exec} = require('child_process');
+    {exec} = require('child_process'),
+    {config} = require("bureau-ium");
 
 let args = {};
 
@@ -31,7 +32,7 @@ if (args['-h'] || args['--help']) {
             spaces = argument[0].length % 4,
             tabs = Math.floor((longest.split(', ')[0].length) / 4) - Math.floor(split[0].length / 4);
 
-        console.log(`${"    "}${split[0]}${"    ".repeat(tabs+1)}${" ".repeat(4-spaces)}${split[1]}\t${argument[1]}`)
+        console.log(`${"    "}${split[0]}${"    ".repeat(tabs + 1)}${" ".repeat(4 - spaces)}${split[1]}\t${argument[1]}`)
     });
     process.exit(0);
 }
@@ -44,7 +45,7 @@ if ((args['-i'] || args['--install']) && !args['-h'] && !args['--help']) {
 }
 
 if ((args['-m'] || args['--mocha']) && !args['-h'] && !args['--help']) {
-    exec('.\\node_modules\\.bin\\mocha -t 20000 --recursive .\\test_suite\\', (error, stdout, stderr) => {
+    exec(`.\\node_modules\\.bin\\mocha -t ${config.timeouts.suite} --recursive .\\test_suite\\`, (error, stdout, stderr) => {
         console.log(`${stdout}`);
         console.error(`${stderr}`);
     });

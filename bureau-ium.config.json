@@ -12,7 +12,26 @@
         "version": "10"
       },
       "timeouts": {
-        "step": 10
+        "step": 20,
+        "suite": 30
+      }
+    },
+    "demo": {
+      "host": "https://www.google.co.uk",
+      "remote": {
+        "host": "hub-cloud.browserstack.com",
+        "credentials": "browserstack-credentials.js"
+      },
+      "browser": {
+        "name": "chrome",
+        "version": "75"
+      },
+      "os": {
+        "name": "Windows",
+        "version": "10"
+      },
+      "timeouts": {
+        "step": 3600
       }
     }
   }

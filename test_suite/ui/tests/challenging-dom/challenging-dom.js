@@ -7,8 +7,7 @@ const {Browser} = require("bureau-ium"),
 
 describe("Challenging DOM", async () => {
     before(async () => {
-        await browser.maximise;
-        await the.internet.urls.home.navigate;
+        await (await browser.maximise).and.browse(the.internet.urls.home);
         return await the.internet.menu.item("Challenging DOM").can.be.clicked;
     });
 
